@@ -1,0 +1,786 @@
+@font-face {
+    font-family: 'Berserk';
+    src: url('./Berserker-Regular.otf') format("opentype");
+}
+:root {
+    --color1: #B6AD90;
+    --color2: #656D4A;
+    --color3: #333D29;
+    --collection-width: 640px;
+}
+body {
+    margin: 0;
+    background: var(--color1);
+    color: var(--color3);
+    text-align: center;
+}
+body * {
+    font-family: "Berserk";
+}
+.navbar {
+    margin-bottom: 1.5rem;
+    padding: 40px;
+    background: var(--color3);
+    font-size: 1.5rem;
+}
+.navbar span {
+    font-size: 1rem;
+}
+.navbar a {
+    font-weight: bold;
+    color: var(--color1);
+    text-decoration: none;
+}
+.navbar a:hover {
+    background: var(--color2);
+    border-radius: 10px;
+    padding: 10px;
+}
+.navbar > span {
+    margin: auto 20px;
+    color: var(--color1);
+}
+.nav-home {
+    float: left;
+}
+.nav-home::after {
+    content: "";
+    clear: both;
+}
+
+.navbar a.router-link-exact-active {
+color: var(--color1);
+} 
+/* Homeview */
+.home > h1 {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.rec {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    color: var(--color2);
+} 
+.rec-left {
+    width: 40%;
+    border: 7px dotted var(--color2);
+    padding: 7px;
+} 
+.rec-left > a > img {
+    border-radius: 10px;
+    width: 100%;
+} 
+.rec-right {
+    width: 40%;
+    margin-top: 30px;
+    margin-left: 0;
+}
+.rec-right > h3 {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+}
+.rec-right > h3 > span {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.rec-authors {
+    text-decoration: underline;
+}
+.rec-authors::after {
+    content: " ";
+}
+.rec-right:last-child {
+    font-size: 1.2rem;
+}
+.genres {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+/* search */
+.search input {
+    background: var(--color1);
+    border-radius: 10px;
+    border: 1px dotted var(--color2);
+    width: 300px;
+    color: var(--color3);
+}
+.search input:focus {
+    outline: none;
+    padding: 10px;
+    caret-color: var(--color2);
+    font-size: medium;
+}
+.search > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    > a {
+        text-decoration: none;
+    }
+}
+.search-result {
+    background: var(--color2);
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 150px;
+    aspect-ratio: 3/1;
+    padding-top: 1.5rem;
+    border: 2px dotted var(--color1);
+    border-radius: 10px;
+    color: var(--color1);
+}
+/* scroll */
+.scroll {
+    position: fixed;
+    top: 270px;
+    right: 60px;
+}
+.scroll > button {
+    margin-right: 5px;
+}
+#scroll-down, #scroll-up {
+    border: none;
+    border-radius: 60%;
+    width: 50px;
+    aspect-ratio: 1;
+    font-size: 2rem;
+    background: var(--color2);
+    color: var(--color1);
+    opacity: 0.3;
+}
+#scroll-down:hover, #scroll-up:hover {
+    opacity: 1;
+}
+#scroll-down:active, #scroll-up:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+/* manga list */
+.collection h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.single-manga h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.manga-list, #single-manga {
+    max-width: var(--collection-width);
+    margin: 20px auto;
+    
+} 
+.manga {
+    padding: 10px 20px;
+    background: var(--color2);
+    color: var(--color1);
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.05);
+    align-items: center;
+} 
+.manga h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px auto;
+}
+.manga-details {
+    display: block;
+    padding: 5px 20px 20px 20px;
+    font-size: 1.3rem;
+}
+#manga-author {
+    margin-bottom: 15px;
+}
+.manga-details .manga-ep {
+    display: flex;
+} 
+#manga-update {
+    padding-top: 15px;
+    text-align: left;
+}
+#manga-note {
+    text-align: left;
+    margin-top: 10px;
+}
+    /* filter */
+.filter {
+    width: 500px;
+    margin: 10px auto;
+    text-align: right;
+} 
+.filter button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: var(--color2);
+    color: var(--color1);
+    border: 1px solid var(--color3);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: medium;
+    z-index: 0;
+}
+/* manga list icons */
+.icons {
+    margin: 20px auto 10px auto;
+    cursor: pointer;
+}
+/* manga form */
+.manga-form, .blog-form {
+    margin: 50px auto;
+}
+.manga-form h2, .blog-form h2 {
+    margin: 20px auto;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+}
+.manga-form h2:hover, .blog-form h2:hover {
+    background: var(--color2);
+    width: 480px;
+    padding: 50px auto;
+    border-radius: 20px;
+}
+
+.manga-form-content label, .blog-form-content label{
+    display: block;
+    width: 600px;
+    text-align: left;
+    margin: 20px auto;
+    font-size: larger;
+    cursor: pointer;
+}
+.manga-form-content label input, .blog-form-content label input {
+    background: var(--color1);
+    color: var(--color3);
+    border-radius: 10px;
+    border: 1px dotted var(--color2);
+}
+.manga-form-content label input:focus, .blog-form-content label input:focus {
+    outline: none;
+    padding: 10px;
+    caret-color: var(--color2);
+    font-size: medium;
+    caret-shape: block;
+}
+label input[name='title'], label input[name='episodes'], label input[name='author'], label input[name='c-title'], label input[name='tags'], label input[name='mangaTitle'], label input[name='commentTitle']  {
+    width: 300px;
+    height: 1.5rem;
+}
+
+label textarea[name='note'], label textarea[name='content'] {
+    outline: none;
+    background: var(--color1);
+    color: var(--color3);
+    border-radius: 10px;
+    border: 1px dotted var(--color2);
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: medium;
+}
+label input[type="checkbox"] {
+    accent-color: var(--color2);
+    opacity: 0;
+}
+label input[type="checkbox"]:hover {
+    opacity: 0.2;
+}
+label input[type="checkbox"]:checked {
+    opacity: 1;
+}
+
+.manga-form-content button, .blog-form-content button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color2);
+    color: var(--color1);
+    font-size: large;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.manga-form-content button:active, .blog-form-content button:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+#post-content {
+    line-height: 1.3rem;   
+}
+
+/* manga edit form */
+.manga-edit-form, .post-edit-form {
+    border: 2px dotted var(--color1);
+    padding: 20px 20px;
+    margin: 20px;
+}
+
+/* blog list */
+.blog-title h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.post-list {
+    max-width: var(--collection-width);
+    margin: 20px auto;
+    
+} 
+.post {
+    padding: 10px 20px;
+    background: var(--color2);
+    color: var(--color1);
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.05);
+    align-items: center;
+} 
+.post h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px auto;
+}
+.post-details {
+    display: block;
+    padding: 5px 20px 20px 20px;
+    font-size: 1rem;
+    margin: 0;
+    > p {
+        margin-bottom: 50px;
+    }
+    > span {
+        margin: 50px auto 10px auto;
+        font-size: 1.2rem;
+        text-decoration: underline;
+    }
+    .tags {
+        display: grid;
+        margin: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        .tags-details {
+            display: flex;
+            background: var(--color1);
+            color: var(--color2);
+            border-radius: 10px;
+            > span {
+                width: 30%;
+                font-size: 0.8rem;
+                margin-right: 3px;
+            }
+            > p {
+                    width: 30%;
+                    font-size: 0.7rem;
+            }
+        }
+    
+    }
+}
+#post-title {
+    margin-bottom: 15px;
+}
+.tags {
+    display: flex;
+    gap: 10px;
+}
+.tags > p {
+    background: var(--color1);
+    color: var(--color2);
+    border-radius: 20px;
+    width: 7rem;
+    aspect-ratio: 6/1;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+.tags > p > span:first-child {
+    font-size: 0.8rem;
+}
+.tags > p > span:last-child {
+    font-size: 1.2rem;
+}
+/* search new manga (start using sass) */
+
+.search-new-manga {
+    > h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    > form {
+        margin: 20px auto;
+        > input {
+            background: var(--color1);
+            border-radius: 10px;
+            border: 1px dotted var(--color2);
+            width: 300px;
+            color: var(--color3);   
+            padding: 10px;   
+            margin-right: 10px;  
+            font-size: medium;
+        }
+        > input:focus {
+            outline: none;
+            padding: 10px;
+            caret-color: var(--color2);
+            font-size: large;
+        }
+        > button {
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: var(--color2);
+            color: var(--color1);
+            font-size: large;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+        }
+        > button:active {
+                position: relative;
+                top: 2px;
+                left: 2px;
+        }
+        
+    }
+    .results {
+        width: 80%;
+        margin: auto 10%;
+        .result {
+            
+            border: 2px dotted var(--color2);
+            border-radius: 10px;
+            display: flex;
+            .result-left {
+                margin: 20px auto;
+                padding: 10px 10px;
+                width: 40%;
+            }
+            .result-right {
+                margin: 20px auto;
+                width: 45%;
+                > .background {
+                    > p {
+                        color: var(--color3);
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        width: 100%;
+    }
+    .navbar {
+        width: 100%;
+        padding: 20px;
+        a {
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        span {
+            margin: auto 10px
+        }
+    }
+    .collection {
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .scroll {
+            position: fixed;
+            top: 10%;
+            right: 30%;
+            #scroll-down, #scroll-up {
+                width: 30px;
+                font-size: 1rem;
+                padding: 1px 0;
+                opacity: 0.8;
+                border: 1px dotted var(--color3);
+            }
+        }
+        .search {
+            > ul {
+                > li {
+                    margin: 5px auto;
+                    padding: 10px 10px;
+                    font-size: 0.8rem;
+                    width: 110px;    
+                }
+            }
+        }
+        .filter {
+            text-align: left;
+            > button {
+                width: 15%;
+                font-size: 0.5rem;
+            }
+        }
+        .manga-list {
+            width: 70%;
+            .manga {
+                > h3 {
+                    font-size: 1.5rem;
+                    margin: 10px auto;
+                }
+                .manga-details {
+                    font-size: 0.8rem;
+                    padding: 5px auto;
+                }
+                .icons {
+                    margin-top: 10px;
+                }
+                .manga-edit-form {
+                    margin: 10px;
+                    padding: 10px auto;
+                    > form {
+                        > label {
+                            font-size: 0.8rem;
+                            > input {
+                                display: block;
+                                margin-top: 10px;
+                                width: 20%;
+                                font-size: 12px;
+                            }
+                            > input[type="checkbox"] {
+                                opacity: 1;
+                                accent-color: var(--color1);
+                            }    
+                            > textarea {
+                                display: block;
+                                margin-top: 10px;
+                                width: 20%;
+                                font-size: 12px;
+                            }
+                        }
+                        > button {
+                            width: 40%;
+                            height: 30px;
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+        .new-manga-form {
+           .manga-form {
+            width: 40%;
+            > h2 {
+                margin: 0;
+                width: 100%;
+                font-size: 1rem;
+            }
+            > form {
+                > label {
+                    width: 100%;
+                    > input {
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                    > input[type="checkbox"] {
+                        opacity: 1;
+                    }
+                    > textarea {
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                }
+                > button {
+                    width: 100%;
+
+                }
+            }
+           }
+        }
+    }
+    .home {
+        > h1 {
+            font-size: 1.5rem;
+        }
+        .rec {
+            .rec-right {
+                > h3 {
+                    font-size: 1.3rem;
+                    line-height: 1.5rem;
+                    margin-bottom: 20px;
+                }
+                 p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .blog {
+        .scroll {
+            position: fixed;
+            top: 10%;
+            right: 15%;
+            #scroll-down, #scroll-up {
+                width: 30px;
+                font-size: 1rem;
+                padding: 1px 0;
+                opacity: 0.8;
+                border: 1px dotted var(--color3);
+            }
+
+
+        }
+        .post-list {
+            width: 80%;
+            > div {
+                .post {
+                    > h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.5rem;
+                    }
+                    .post-details {
+                        > p {
+                            font-size: 0.8rem;
+                            line-height: 1rem;
+                        }
+                        > span {
+                            margin: 20px auto 10px auto;
+                            display: inline-block;
+                            font-size: 1.2rem;
+                            text-decoration: underline;
+                        }
+                        > form {
+                            > label {
+                                display: block;
+                                font-size: 1rem;
+                                margin-bottom: 10px;
+                            }
+                            > input {
+                                background: var(--color1);
+                                border-radius: 10px;
+                                padding: 5px;
+                                color: var(--color3);
+                            }
+                            > input:focus {
+                                outline: none;
+                            }
+                            .submit {
+                                margin: 10px;
+                                > button {
+                                    background: var(--color1);
+                                    border: none;
+                                    border-radius: 10px;
+                                    padding: 5px;
+                                    color: var(--color3);
+                                }
+                            }
+                        }
+                        .tags {
+                            margin: 0;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            .tags-details {
+                                display: flex;
+                                background: var(--color1);
+                                color: var(--color2);
+                                border-radius: 10px;
+                                > span {
+                                    width: 30%;
+                                    font-size: 0.8rem;
+                                    margin-right: 3px;
+                                }
+                                > p {
+                                        width: 30%;
+                                        font-size: 0.7rem;
+                                }
+                            } 
+                        }
+                    }
+                    .icons {
+                        margin: 0;
+                    }
+                    .edit-form {
+                        .post-edit-form {
+                            > h2 {
+                                font-size: 1.2rem;
+                                line-height: 1.4rem;
+                            }
+                            > form {
+                                > label {
+                                    width: 100%;
+                                    > input {
+                                        margin-top: 10px;
+                                        width: 90%;
+                                    }
+                                    > textarea {
+                                        margin-top: 10px;
+                                        width: 90%;
+                                    }
+                                }
+                                > button {
+                                    width: 80%;
+                
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .blog-form {
+            width: 40%;
+            > h2 {
+                margin: 0;
+                width: 100%;
+                font-size: 1rem;
+            }
+            > form {
+                > label {
+                    width: 100%;
+                    > input {
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                    > input[type="checkbox"] {
+                        opacity: 1;
+                    }
+                    > textarea {
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                }
+                > button {
+                    width: 80%;
+
+                }
+            }
+        }
+    }
+    .search-new-manga {
+        > form {
+            > button {
+                margin-top: 10px;
+            }
+        }
+        .results {
+            .result {
+                display: block;
+                .result-left {
+                    margin: 10px;
+                    width: 90%;
+                    > h3 {
+                        font-size: 1.5rem;
+                    }
+                }
+                .result-right {
+                    margin: 10px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

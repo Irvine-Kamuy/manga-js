@@ -1,0 +1,328 @@
+{
+  "mangas": [
+    {
+      "id": 1,
+      "title": "Real",
+      "author": "Takehiko Inoue",
+      "own": "1- 10, 15",
+      "isEnd": false,
+      "isAbandoned": false,
+      "note": ""
+    },
+    {
+      "id": 2,
+      "title": "Berserk",
+      "author": "Kentaro Miura",
+      "own": "1 - 12",
+      "isEnd": true,
+      "isAbandoned": false
+    },
+    {
+      "id": 3,
+      "title": "Asadora",
+      "author": "Naoki Urasawa",
+      "own": "1 - 4, 6",
+      "isEnd": false,
+      "isAbandoned": false
+    },
+    {
+      "id": 4,
+      "title": "Ushio and Tora",
+      "author": "Kazuhiro Fujita",
+      "own": "1, 2",
+      "isEnd": true,
+      "isAbandoned": true
+    },
+    {
+      "id": 5,
+      "title": "Golden Kamuy",
+      "author": "Satoru Noda",
+      "own": "0",
+      "isEnd": true,
+      "isAbandoned": false
+    },
+    {
+      "id": "786b1d2f-614c-4597-a3db-3ba61f865fb8",
+      "title": "Slam Dunk (New Ver.)",
+      "author": "Takehiko Inoue",
+      "own": "1 - 10",
+      "isEnd": true,
+      "isAbandoned": false
+    },
+    {
+      "id": "d03f502e-5fa9-42ab-bd95-b50ae9f04f75",
+      "title": "Centaurs",
+      "author": "Ryo Sumiyoshi",
+      "own": "1, 2",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "ce2aa891-621c-4054-9a45-04950a235719",
+      "title": "Our Torsos Align",
+      "author": "Ryo Sumiyoshi",
+      "own": "1, 2",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "b9899fff-fd7d-4c98-bb3f-3b0810471b0f",
+      "title": "Division Chief Kosaku Shima",
+      "author": "Kenshi HiroKane",
+      "own": "1 - 11",
+      "isEnd": true,
+      "isAbandoned": false
+    },
+    {
+      "id": "07769cee-dfe7-40d4-a805-36ffeaef5a5a",
+      "title": "37 Year Old Kindaichi Case Files",
+      "author": "Seimaru Amagi",
+      "own": "1 - 6",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "cb67659c-ba81-4a79-b8c8-df1561cbbffb",
+      "title": "Umi Ga Hashiru End Roll",
+      "author": "John Tarasumi",
+      "own": "1 - 3",
+      "isEnd": null,
+      "isAbandoned": false
+    },
+    {
+      "id": "d4c5f70c-c2b6-4ba7-bc84-a4dd36785f1a",
+      "title": "Taiyou To Tsuki No Hagane",
+      "author": "Daruma Matsuura",
+      "own": "1 - 2",
+      "isEnd": null,
+      "isAbandoned": null
+    },
+    {
+      "id": "ca1c710e-e4f9-401c-bd3b-cf38d544d073",
+      "title": "Jigoku Raku",
+      "author": "Yuuji Kaku",
+      "own": "1",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "2a4822ee-ab4f-4ca6-9ceb-bfc62255d3f5",
+      "title": "Fire Punch",
+      "author": "Tatsuki Fujimoto",
+      "own": "1 - 8",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "abe2ba7b-205c-444a-9730-ef333b71888b",
+      "title": "Look Back",
+      "author": "Tatsuki Fujimoto",
+      "own": "1",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "d53580c1-14fb-4d51-8db5-6b50edb52136",
+      "title": "Fujimoto Tatsuki Tanpenshuu",
+      "author": "Tatsuki Fujimoto",
+      "own": "17-21, 22-26",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "e6774f41-213f-48f0-a432-558d4a2f635a",
+      "title": "Fullmatal Alchemist",
+      "author": "Hiromu Arakawa",
+      "own": "1 - 23, 27",
+      "isEnd": true,
+      "isAbandoned": true
+    },
+    {
+      "id": "d9c14e67-2bce-4282-b9a6-d73a934ea36f",
+      "title": "Nobunaga no Chef",
+      "author": "Mitsuru Nishimura",
+      "own": "1 - 10",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "ac0786b5-d351-4cc8-9871-0c4cb1929074",
+      "title": "Ashita no Joe",
+      "author": "Asao Takamori, Tetsuya Chiba",
+      "own": "1 - 7",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "7648d5db-7618-454a-bf49-02e9f10482c6",
+      "title": "Pluto",
+      "author": "Naoki Urasawa",
+      "own": "1 - 3, 5 - 8",
+      "isEnd": true,
+      "isAbandoned": true
+    },
+    {
+      "id": "1d2943f8-7002-4049-a801-8b41050ff5a9",
+      "title": "Designs",
+      "author": "Daisuke Igarashi",
+      "own": "1 - 5",
+      "isEnd": true,
+      "isAbandoned": false
+    },
+    {
+      "id": "1f08b754-181c-4de9-b5d7-36cc0f56c0c0",
+      "title": "Innocent",
+      "author": "Shinichi Sakamoto",
+      "own": "1 - 5",
+      "isEnd": true,
+      "isAbandoned": true
+    },
+    {
+      "id": "d29dd8f1-8123-4a30-a8cd-18e7ac0553ea",
+      "title": "Blue Giant",
+      "author": "Shinichi Ishizuka",
+      "own": "1 - 9",
+      "isEnd": true,
+      "isAbandoned": true
+    },
+    {
+      "id": "06ad52db-64a6-484d-bbfc-9942160acf7e",
+      "title": "Atelier Witch Hat",
+      "author": "Kamome Shirahama",
+      "own": "1 - 2",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "ca1c5285-7a04-47a0-99a8-0c030065ca82",
+      "title": "Fungus and Iron",
+      "author": "Ayaka Katayama",
+      "own": "1",
+      "isEnd": null,
+      "isAbandoned": null
+    },
+    {
+      "id": "250954bd-ca0e-43ae-a70f-ebc7e9046f15",
+      "title": "Blue Period",
+      "author": "Tsubasa Yamaguchi",
+      "own": "1, 13",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "792863a8-ab8a-4384-9f04-06334b0cc772",
+      "title": "Gachiakuta",
+      "author": "Kei Urana",
+      "own": "1 - 5",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "12251a81-3565-49bd-952d-54764c45540f",
+      "title": "Yomi no Tsugai",
+      "author": "Hiromu Arakawa",
+      "own": "1 - 3",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "e0a18c1c-3dc4-43b0-a1b2-81efe65cef6a",
+      "title": "Nige Jouzu no Wakagimi",
+      "author": "Yusei Matsui",
+      "own": "1 - 7, 9",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "c77c43cf-8830-4748-a3d7-2cb520141ef0",
+      "title": "Dan Da Dan",
+      "author": "Yukinobu Ryuu",
+      "own": "2 - 6, 8 - 11",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "6e0e88f0-07e8-4fa6-a763-6bc1fda650b0",
+      "title": "Kaijuu 8-gou",
+      "author": "Naoya Matsumoto",
+      "own": "1, 8 - 9",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "6b613343-f46d-4054-9f8f-84ba97f3d0d2",
+      "title": "Choujin X",
+      "author": "Sui Ishida",
+      "own": "1 - 2",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "eae481ec-8966-4fd2-a62b-f20f8e3a868e",
+      "title": "Behind the supermarket, smoking with you",
+      "author": "Jinushi",
+      "own": "1 - 2",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "a67f1db3-c5e9-4b27-b91b-52e4ebfd9c51",
+      "title": "Shanaou Yoshitsune",
+      "author": "Hirofumi Sawada",
+      "own": "1 - 22",
+      "isEnd": true,
+      "isAbandoned": null
+    },
+    {
+      "id": "e51c2d89-6e9f-45dc-baa3-3d2763802a21",
+      "title": "Skip Beat",
+      "author": "Yoshiki Nakamura",
+      "own": "1 - 28",
+      "isEnd": null,
+      "isAbandoned": true
+    },
+    {
+      "id": "91087e5b-b329-4a1e-b20e-ab20811c6517",
+      "title": "A Town Where You Live",
+      "author": "Seo Kouji",
+      "own": "1 - 21",
+      "isEnd": true,
+      "isAbandoned": true,
+      "note": ""
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "mangaTitle": "Real",
+      "commentTitle": "Better than Slam Dunk",
+      "content": "No cap No capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo capNo cap",
+      "tags": [
+        "Real",
+        "test1",
+        "test2",
+        "t3",
+        "t4",
+        "t5",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "081d4e66-f84b-4605-86ed-9de7f14b5f69",
+      "mangaTitle": "test1",
+      "commentTitile": "ewer",
+      "content": "qwewqe",
+      "tags": "fadf"
+    },
+    {
+      "id": "b9191c3f-5999-4207-99e7-926f2db188be",
+      "mangaTitle": "test3",
+      "commentTitile": "test3",
+      "content": "some content for text 3... some content for text 3... some content for text 3... some content for text 3... some content for text 3... some content for text 3... ",
+      "tags": "t1 t2 t3"
+    }
+  ]
+}

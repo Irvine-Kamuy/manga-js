@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Random Recommendation</h1>
+    <div class="rec">
+      <div class="rec-left">
+        <a :href="rec.url"><img :src="rec.img"></a> 
+      </div>
+      <div class="rec-right">
+        <h3>{{ rec.title }} <span>{{ rec.titleJp }}</span></h3>
+        <p v-for="a in rec.authors" :key="a.mal_id" class="rec-authors">{{ a.name }}</p>
+        <div class="genres">
+        <p v-for="g in rec.genres" :key="g.mal_id">{{ g.name }}</p>
+        </div>
+        <p>background story: {{ rec.bgStory ? rec.bgStory : "no background story is found"}}</p>
+      </div>
+    </div>
+    
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { defineComponent } from 'vue';
+import { storeToRefs } from 'pinia';
 
-export default {
+import { useMangaStore } from '../stores/MangaStore'
+
+export default defineComponent({
   name: 'HomeView',
-  components: {
-    HelloWorld
+  setup() {
+    const mangaStore = useMangaStore() 
+    mangaStore.getHomePageImg()
+    const { rec } = storeToRefs(mangaStore)
+
+    return { rec }
   }
-}
+});
 </script>
+
+

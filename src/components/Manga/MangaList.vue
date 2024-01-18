@@ -3,11 +3,11 @@
     <h3 ref="m-title">{{ manga.title }}</h3>
     <div class="manga-details">
       <p id="manga-author">{{ manga.author }}</p>
-        <div class="manga-ep">
-            <span>Episodes: &ensp;</span><p v-for="m in manga.own" :key="m.id">{{ m }}&ensp; </p>
-        </div>
-        <p id="manga-update">{{ update }}</p>
-        <p id="manga-note"><span>Note: </span>{{ manga.note ? manga.note : 'none' }}</p>
+      <div class="manga-ep">
+          <span>Episodes: &ensp;</span><p v-for="m in manga.own" :key="m.id">{{ m }}&ensp; </p>
+      </div>
+      <p id="manga-update">{{ update }}</p>
+      <p id="manga-note"><span>Note: </span>{{ manga.note ? manga.note : 'none' }}</p>
     </div>
     <div class="icons">
       <div 

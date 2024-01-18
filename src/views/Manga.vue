@@ -5,7 +5,7 @@
       <div class="loading" v-if="isLoading">Loading manga...</div>
 
       <!-- manga -->
-      <div id="single-manga">
+      <div id="aManga">
         <div>
           <MangaList :manga="manga" />
         </div>

@@ -172,7 +172,7 @@ color: var(--color1);
     font-size: 2rem;
     font-weight: bold;
 }
-.manga-list, #single-manga {
+.manga-list, #aManga {
     max-width: var(--collection-width);
     margin: 20px auto;
     
@@ -773,14 +773,78 @@ label input[type="checkbox"]:checked {
                     margin: 10px;
                     width: 90%;
                     > h3 {
+                        margin-top: 10px;
                         font-size: 1.5rem;
                     }
                 }
                 .result-right {
-                    margin: 10px;
-                    width: 90%;
+                    margin: 0 auto;
+                    padding-bottom: 10px;
+                    width: 85%;
+                    .background {
+                        > p {
+                            font-size: 0.8rem;
+                            line-height: 1.2rem;        
+                        }
+                    }
                 }
             }
         }
     }
+    .single-manga {
+        #aManga {
+            .manga {
+                width: 70%;
+                margin: 0 auto;
+                > h3 {
+                    font-size: 1.5rem;
+                    margin: 10px auto;
+                }
+                .manga-details {
+                    #manga-author {
+                        font-size: 0.8rem;
+                        padding: 5px auto;
+                    }
+                    .manga-ep, #manga-update, #manga-note {
+                        font-size: 1rem;
+    
+                    }
+                }
+                .icons {
+                    margin-top: 10px;
+                }
+                .manga-edit-form {
+                    margin: 10px;
+                    padding: 10px auto;
+                    > form {
+                        > label {
+                            font-size: 0.8rem;
+                            > input {
+                                display: block;
+                                margin-top: 10px;
+                                width: 20%;
+                                font-size: 12px;
+                            }
+                            > input[type="checkbox"] {
+                                opacity: 1;
+                                accent-color: var(--color1);
+                            }    
+                            > textarea {
+                                display: block;
+                                margin-top: 10px;
+                                width: 30%;
+                                font-size: 12px;
+                            }
+                        }
+                        > button {
+                            width: 40%;
+                            height: 30px;
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }    
+    }    
 }
+

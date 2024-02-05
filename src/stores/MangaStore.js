@@ -1,10 +1,19 @@
 import { defineStore } from 'pinia';
+import { db, mangasRef } from '@/firebase';
+import { deleteDoc, getDocs, doc } from 'firebase/firestore';
 
 
 export const useMangaStore = defineStore('mangaStore', {
     state: () => ({
         mangas: [],
-        manga: [],
+        manga: {
+            title: '', 
+            author: '', 
+            own: '', 
+            isEnd: false, 
+            isAbandoned: false, 
+            note: ''
+        },
         isLoading: false, 
         rec: [{
             img: [],
@@ -91,7 +100,7 @@ export const useMangaStore = defineStore('mangaStore', {
             manga.isEnd = data.isEnd
             manga.isAbandoned = data.isAbandoned
             manga.note = data.note
-
+            
             const res = await fetch('http://localhost:3000/mangas/' + id, {
                 method: 'PATCH',
                 body: JSON.stringify(data), 
@@ -106,9 +115,7 @@ export const useMangaStore = defineStore('mangaStore', {
             this.isLoading = true
             const res = await fetch('http://localhost:3000/mangas/' + id)
             const data = await res.json()
-            
             this.manga = data
-            console.log(this.manga)
             this.isLoading = false
 
             if(res.error) {
@@ -121,13 +128,15 @@ export const useMangaStore = defineStore('mangaStore', {
                 const res = await fetch('https://api.jikan.moe/v4/random/manga')
                 const data = await res.json()
                 
-                this.rec.img = data.data.images.webp.large_image_url
-                this.rec.url = data.data.url
-                this.rec.title = data.data.title
-                this.rec.titleJp = data.data.title_japanese
-                this.rec.authors = data.data.authors
-                this.rec.genres = data.data.genres
-                this.rec.bgStory = data.data.background
+                this.rec = {
+                    img: data.data.images.webp.large_image_url, 
+                    url: data.data.url, 
+                    title: data.data.title, 
+                    titleJp: data.data.title_japanese, 
+                    authors: data.data.authors, 
+                    genres: data.data.genres, 
+                    bgStory: data.data.background    
+                }
                 this.isLoading = false 
             } catch(err) {
                 console.log(err);

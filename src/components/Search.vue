@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, watchEffect } from 'vue';
 
 export default {
     props: ['mangas'],
@@ -19,9 +19,9 @@ export default {
         const search = ref('')
         const mangaTitleAndId = ref([])
 
-        watch(() => {
+        watchEffect(() => {
             mangaTitleAndId.value = props.mangas.map((m) => ({title: m.title, id: m.id}))
-        }, { immediate: true })
+        })
 
         console.log(mangaTitleAndId)
         

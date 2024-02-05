@@ -14,14 +14,14 @@
   </template>
   
   <script>
-  import { computed, defineComponent } from 'vue';
+  import { defineComponent, onMounted } from 'vue';
   import { storeToRefs } from 'pinia';
-  
   import { useMangaStore } from '../stores/MangaStore'
+  import { useRoute } from 'vue-router';
 
   // components
-  import MangaList from '../components/Manga/MangaList.vue'
-  import { useRoute } from 'vue-router';
+  import MangaList from './MangaList.vue'
+  
 
 
   export default defineComponent({
@@ -33,11 +33,13 @@
       const route = useRoute()
       const id = route.params.id
       
-      console.log(id);
-      //fetch manga
-      mangaStore.getManga(id)
-
       
+      onMounted(async () => {
+        await mangaStore.getMangas()
+        await mangaStore.getManga(id);
+      }) 
+
+      //why mangas re-render after editting but manga doesn't
 
       return { manga, isLoading }
     }

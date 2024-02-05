@@ -7,7 +7,7 @@
       "own": "1- 10, 15",
       "isEnd": false,
       "isAbandoned": false,
-      "note": ""
+      "note": "test12"
     },
     {
       "id": 2,
@@ -111,7 +111,8 @@
       "author": "Tatsuki Fujimoto",
       "own": "1 - 8",
       "isEnd": true,
-      "isAbandoned": null
+      "isAbandoned": null,
+      "note": "test"
     },
     {
       "id": "abe2ba7b-205c-444a-9730-ef333b71888b",

@@ -55,7 +55,7 @@
   import { useMangaStore } from '../stores/MangaStore'
 
   // components
-  import MangaList from '@/components/Manga/MangaList.vue';
+  import MangaList from '@/views/MangaList.vue';
   import MangaAddForm from '../components/Manga/MangaAddForm.vue'
   import ScrollToBottom from '../components/ScrollToBottom.vue'
   import Search from '../components/Search.vue'

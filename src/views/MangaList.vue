@@ -4,7 +4,7 @@
     <div class="manga-details">
       <p id="manga-author">{{ manga.author }}</p>
       <div class="manga-ep">
-          <span>Episodes: &ensp;</span><p v-for="m in manga.own" :key="m.id">{{ m }}&ensp; </p>
+          <span>Episodes: &ensp;</span><p>{{ manga.own }}&ensp; </p>
       </div>
       <p id="manga-update">{{ update }}</p>
       <p id="manga-note"><span>Note: </span>{{ manga.note ? manga.note : 'none' }}</p>
@@ -28,8 +28,8 @@
 <script>
 
 import { ref } from 'vue';
-import { useMangaStore } from '../../stores/MangaStore';
-import MangaEditForm from './MangaEditForm.vue';
+import { useMangaStore } from '../stores/MangaStore';
+import MangaEditForm from '../components/Manga/MangaEditForm.vue';
 
 export default {
     props: ['manga'], 
@@ -37,12 +37,14 @@ export default {
     setup(props) {
         const mangaStore = useMangaStore()
         const isEditting = ref(false)
+        
         const handleEdit= function() {
             isEditting.value = true
         }
         const handleCloseForm = () => {
           isEditting.value = false
         }
+        
         const update = ref('')
         if(props.manga.isEnd && props.manga.isAbandoned) {
           update.value = 'Finished, and won\'t collect anymore'
@@ -53,6 +55,8 @@ export default {
         } else if (!props.manga.isEnd && !props.manga.isAbandoned) {
           update.value = 'To be continued, will keep collecting'
         }
+
+        // console.log(props.manga, '112qwer');
 
         return { mangaStore, isEditting, handleEdit, handleCloseForm, update }
     }

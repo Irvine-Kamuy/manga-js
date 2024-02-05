@@ -79,7 +79,7 @@ export default {
             isAbandoned: props.manga.isAbandoned,
             note: props.manga.note,
         })
-        
+        console.log(props.manga, 'yes');
 
         const handleUpdate = () => {
             if (currentManga.value) {
@@ -92,6 +92,7 @@ export default {
                     note: currentManga.value.note, 
                 })
             }
+            console.log('finished edit');
             currentManga.value = {
                     title: props.manga.title,
                     author: props.manga.author,

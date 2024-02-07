@@ -48,16 +48,17 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { ref } from 'vue';
 import { useMangaStore } from '../../stores/MangaStore';
+
 
 export default {
     setup() {
         const mangaStore = useMangaStore()
         const newPost = ref({
             mangaTitle: '',
-            commentTitile: '',
+            commentTitle: '',
             content: '', 
             tags: [], 
         })
@@ -68,20 +69,16 @@ export default {
         }
         const handleSubmit = () => {
             if (newPost.value.mangaTitle) {
-                mangaStore.addPost({
-                    id: uuidv4(),
-                    mangaTitle: newPost.value.mangaTitle,
-                    commentTitile: newPost.value.commentTitile, 
-                    content: newPost.value.content, 
-                    tags: newPost.value.tags, 
-                })
+                mangaStore.addPost(newPost.value)
             }
             newPost.value = ({
                 mangaTitle: '',
-                commentTitile: '',
+                commentTitle: '',
                 content: '', 
                 tags: [], 
-        })
+            })
+            mangaStore.getPosts()
+            isAdding.value = false
         }
         
         return { newPost, handleSubmit, isAdding, toggleAdding }

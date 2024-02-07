@@ -20,7 +20,7 @@
             >edit</div>
             <div 
             class="delete material-icons"
-            @click="mangaStore.deletePost(post.id)"
+            @click="deletePost"
             >delete</div>
         </div>
         <div class="edit-form" v-if="isEditting">
@@ -56,7 +56,12 @@
           const snippet = computed(() => {
             return props.post.content.substring(0, 100) + '......'
           })
-          return { mangaStore, isEditting, isAddingTag, handleEdit, handleCloseForm, toggleAddingTag, snippet }
+          const deletePost = () => {
+            mangaStore.deletePost(props.post.id)
+            mangaStore.getPosts()
+          }
+
+          return { mangaStore, isEditting, isAddingTag, handleEdit, handleCloseForm, toggleAddingTag, snippet, deletePost }
       }
   }
   </script>

@@ -16,7 +16,7 @@
       >edit</div>
       <div 
         class="delete material-icons"
-        @click="mangaStore.deleteManga(manga.id)"
+        @click="deleteManga"
       >delete</div>
     </div>
     <div class="edit-form" v-if="isEditting">
@@ -44,7 +44,10 @@ export default {
         const handleCloseForm = () => {
           isEditting.value = false
         }
-        
+        const deleteManga = () => {
+          mangaStore.deleteManga(props.manga.id)
+          mangaStore.getMangas()
+        }
         const update = ref('')
         if(props.manga.isEnd && props.manga.isAbandoned) {
           update.value = 'Finished, and won\'t collect anymore'
@@ -58,7 +61,7 @@ export default {
 
         // console.log(props.manga, '112qwer');
 
-        return { mangaStore, isEditting, handleEdit, handleCloseForm, update }
+        return { mangaStore, isEditting, handleEdit, handleCloseForm, update, deleteManga }
     }
 }
 </script>

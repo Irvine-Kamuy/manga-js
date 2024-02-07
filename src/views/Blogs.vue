@@ -42,10 +42,11 @@
       const { posts, isLoading } = storeToRefs(mangaStore)
 
       //fetch mangas
-      mangaStore.getPosts()
-
-      console.log(posts);
-      
+      const fetchPosts = async() => {
+        await mangaStore.getPosts()
+      } 
+      fetchPosts()
+      console.log(posts.value, '123');
       const filter = ref('all')
 
       return { posts, isLoading, filter }

@@ -53,6 +53,8 @@
   import { storeToRefs } from 'pinia';
   
   import { useMangaStore } from '../stores/MangaStore'
+  import {doc, getDoc} from 'firebase/firestore'
+  import { db } from '@/firebase';
 
   // components
   import MangaList from '@/views/MangaList.vue';
@@ -72,9 +74,16 @@
       //fetch mangas
       mangaStore.getMangas()
 
-      console.log(mangas);
-      
       const filter = ref('all')
+
+      // const test = async() => {
+      //   const docRef = doc(db, 'mangas', 'E6AopJpYKdo1lAweLEMo')
+      //   const docc = await getDoc(docRef)
+      //   console.log(docc.data(), '11');
+      // }
+      // test()
+
+
 
       return { mangas, isLoading, totalCount, updating, updatingCount, end, endCount, abandoned, abandonedCount, filter }
     }

@@ -55,12 +55,7 @@ export default {
 
         const handleUpdate = () => {
             if (currentPost.value) {
-                mangaStore.editPost(props.post.id, {
-                    mangaTitle: currentPost.value.mangaTitle, 
-                    commentTitle: currentPost.value.commentTitle, 
-                    content: currentPost.value.content, 
-                    tags: currentPost.value.tags, 
-                })
+                mangaStore.editPost(props.post.id, currentPost.value)
             }
             currentPost.value = {
                 mangaTitle: props.post.mangaTitle, 
@@ -68,6 +63,7 @@ export default {
                 content: props.post.content, 
                 tags: props.post.tags, 
             }
+            mangaStore.getPosts()
             emit('close-form')
         }
 

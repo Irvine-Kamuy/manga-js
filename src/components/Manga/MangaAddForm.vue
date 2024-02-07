@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { ref } from 'vue';
 import { useMangaStore } from '@/stores/MangaStore';
 
@@ -82,20 +82,11 @@ export default {
         })
         const isAdding = ref(false)
         const toggleAdding = () => {
-            console.log(isAdding.value);
             isAdding.value = !isAdding.value
         }
         const handleSubmit = () => {
             if (newManga.value.title) {
-                mangaStore.addManga({
-                    id: uuidv4(),
-                    title: newManga.value.title,
-                    author: newManga.value.author, 
-                    own: newManga.value.own, 
-                    isEnd: newManga.value.isEnd, 
-                    isAbandoned: newManga.value.isAbandoned,
-                    note: newManga.value.note
-                })
+                mangaStore.addManga(newManga.value)
             }
             newManga.value = ({
             title: '',
@@ -104,7 +95,9 @@ export default {
             isEnd: null, 
             isAbandoned: null, 
             note: ''
-        })
+            })
+            mangaStore.getMangas()
+            isAdding.value = false
         }
         
         return { newManga, handleSubmit, isAdding, toggleAdding }

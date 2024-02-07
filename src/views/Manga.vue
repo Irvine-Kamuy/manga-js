@@ -22,6 +22,8 @@
   // components
   import MangaList from './MangaList.vue'
   
+  // import {doc, getDoc} from 'firebase/firestore'
+  // import { db } from '@/firebase';
 
 
   export default defineComponent({
@@ -29,14 +31,28 @@
     setup() {
       const mangaStore = useMangaStore()
 
-      const { manga, isLoading } = storeToRefs(mangaStore)
+      const { mangas, manga, isLoading } = storeToRefs(mangaStore)
       const route = useRoute()
       const id = route.params.id
-      
-      
+      // const mm = ref({})
+      console.log(id, manga.value, '123');
+
+      // const test = async () => {
+      //   const docRef = doc(db, 'mangas', id)
+      //   const docc = await getDoc(docRef)
+      //   mm.value = docc.data()
+      //   console.log(mm.value, '12');
+      // }
+      // test()
+
+
       onMounted(async () => {
-        await mangaStore.getMangas()
-        await mangaStore.getManga(id);
+        try {
+          await mangaStore.getMangas()
+          await mangaStore.getManga(id)
+        } catch (err) {
+          console.error('Error fetching manga:', err)
+        }
       }) 
 
       //why mangas re-render after editting but manga doesn't

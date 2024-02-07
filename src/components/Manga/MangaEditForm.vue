@@ -83,14 +83,7 @@ export default {
 
         const handleUpdate = () => {
             if (currentManga.value) {
-                mangaStore.editManga(props.manga.id, {
-                    title: currentManga.value.title, 
-                    author: currentManga.value.author, 
-                    own: currentManga.value.own, 
-                    isEnd: currentManga.value.isEnd, 
-                    isAbandoned: currentManga.value.isAbandoned,
-                    note: currentManga.value.note, 
-                })
+                mangaStore.editManga(props.manga.id, currentManga.value)
             }
             console.log('finished edit');
             currentManga.value = {
@@ -101,6 +94,7 @@ export default {
                     isAbandoned: props.manga.isAbandoned,
                     note: props.manga.note,
             }
+            mangaStore.getMangas()
             emit('close-form')
         }
 

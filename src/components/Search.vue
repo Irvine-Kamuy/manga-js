@@ -18,13 +18,10 @@ export default {
     setup(props) {
         const search = ref('')
         const mangaTitleAndId = ref([])
-
+        console.log(props.mangas, 'test');
         watchEffect(() => {
             mangaTitleAndId.value = props.mangas.map((m) => ({title: m.title, id: m.id}))
-        })
-
-        console.log(mangaTitleAndId)
-        
+        })        
 
         const searchManga = computed(() => {
             return mangaTitleAndId.value.filter((m) => m.title.toLowerCase().includes(search.value))

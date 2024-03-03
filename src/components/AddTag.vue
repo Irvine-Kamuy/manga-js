@@ -2,9 +2,6 @@
     <form @submit.prevent="handleAddTag">
         <label for="tag">Add tag</label>
         <input type="text" v-model="tempTag" placeholder="keep it short tho...">
-        <!-- <div class="pill" v-for="t in tags" :key="t">
-            <span>{{ t }}</span>
-        </div> -->
         <div class="submit">
             <button>Add</button>
         </div>

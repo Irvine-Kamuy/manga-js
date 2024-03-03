@@ -59,8 +59,6 @@ export default {
           update.value = 'To be continued, will keep collecting'
         }
 
-        // console.log(props.manga, '112qwer');
-
         return { mangaStore, isEditting, handleEdit, handleCloseForm, update, deleteManga }
     }
 }

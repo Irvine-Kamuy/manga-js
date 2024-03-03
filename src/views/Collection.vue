@@ -76,14 +76,6 @@
 
       const filter = ref('all')
 
-      // const test = async() => {
-      //   const docRef = doc(db, 'mangas', 'E6AopJpYKdo1lAweLEMo')
-      //   const docc = await getDoc(docRef)
-      //   console.log(docc.data(), '11');
-      // }
-      // test()
-
-
 
       return { mangas, isLoading, totalCount, updating, updatingCount, end, endCount, abandoned, abandonedCount, filter }
     }

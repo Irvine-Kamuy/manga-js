@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { ref, defineEmits } from 'vue';
+import { ref } from 'vue';
 import { useMangaStore } from '@/stores/MangaStore';
 
 

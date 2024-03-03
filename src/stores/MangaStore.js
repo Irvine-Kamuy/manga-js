@@ -63,14 +63,9 @@ export const useMangaStore = defineStore('mangaStore', {
             } catch (error) {
                 console.log(error.message);
             }        
-            // const res = await fetch('http://localhost:3000/mangas')
-            // const data = await res.json()
-
-            // this.mangas = data
             this.isLoading = false
         }, 
         async addManga(manga) {
-            // this.mangas.push(manga)
 
             await addDoc(mangasRef, {
                 id: uuidv4(),
@@ -81,32 +76,9 @@ export const useMangaStore = defineStore('mangaStore', {
                 isAbandoned: manga.isAbandoned,
                 note: manga.note
             })
-
-            // const res = await fetch('http://localhost:3000/mangas', {
-            //     method: 'POST',
-            //     body: JSON.stringify(manga),
-            //     headers: {'Content-Type': 'application/json'}
-            // })
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
         },
         async deleteManga(id) {
             await deleteDoc(doc(db, 'mangas', id))
-
-
-            // this.mangas = this.mangas.filter((m) => {
-            //     return m.id !== id
-            // })
-
-            // const res = await fetch('http://localhost:3000/mangas/' + id, {
-            //     method: 'DELETE', 
-            // })
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
         }, 
         async editManga(id, manga) {
             const docRef = doc(db, 'mangas', id)
@@ -118,43 +90,12 @@ export const useMangaStore = defineStore('mangaStore', {
                 isAbandoned: manga.isAbandoned,
                 note: manga.note, 
             })
-
-
-
-
-
-            // const manga = this.mangas.find(m => m.id === id)
-            // manga.title = data.title
-            // manga.author = data.author
-            // manga.own = data.own
-            // manga.isEnd = data.isEnd
-            // manga.isAbandoned = data.isAbandoned
-            // manga.note = data.note
-            
-            // const res = await fetch('http://localhost:3000/mangas/' + id, {
-            //     method: 'PATCH',
-            //     body: JSON.stringify(data), 
-            //     headers: {'Content-Type': 'application/json'}
-            // })
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
         },
         async getManga(id) {
             this.isLoading = true
             const docRef = doc(db, 'mangas', id)
             const docc = await getDoc(docRef)
-            this.manga = docc.data()
-            
-            // const res = await fetch('http://localhost:3000/mangas/' + id)
-            // const data = await res.json()
-            // this.manga = data
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
-
+            this.manga = docc.data()            
             this.isLoading = false
 
         },
@@ -186,18 +127,6 @@ export const useMangaStore = defineStore('mangaStore', {
             } catch (error) {
                 console.log(error.message);
             }        
-
-
-            // const res = await fetch('http://localhost:3000/blogs/')
-            // const data = await res.json()
-            
-            // this.posts = data
-            // console.log(this.posts)
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
-
             this.isLoading = false
 
         },
@@ -210,38 +139,10 @@ export const useMangaStore = defineStore('mangaStore', {
                 content: post.content, 
                 tags: post.tags
             })
-
-
-
-
-            // this.posts.push(post)
-
-            // const res = await fetch('http://localhost:3000/blogs', {
-            //     method: 'POST',
-            //     body: JSON.stringify(post),
-            //     headers: {'Content-Type': 'application/json'}
-            // })
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
         },
         async deletePost(id) {
 
             await deleteDoc(doc(db, 'blogs', id))
-
-
-            // this.posts = this.posts.filter((p) => {
-            //     return p.id !== id
-            // })
-
-            // const res = await fetch('http://localhost:3000/blog/' + id, {
-            //     method: 'DELETE', 
-            // })
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
         }, 
         async editPost(id, post) {
 
@@ -252,39 +153,9 @@ export const useMangaStore = defineStore('mangaStore', {
                 content: post.content, 
                 tags: post.tags, 
             })
-
-
-
-            // const post = this.posts.find( p => p.id === id)
-            // post.mangaTitle = data.mangaTitle
-            // post.commentTitle = data.commentTitle
-            // post.content = data.content
-            // post.tags = data.tags
-
-            // const res = await fetch('http://localhost:3000/blog/' + id, {
-            //     method: 'PATCH',
-            //     body: JSON.stringify(data), 
-            //     headers: {'Content-Type': 'application/json'}
-            // })
-
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
         }, 
         async getTag(id) {
             this.isLoading = true
-
-
-
-
-            // const res = await fetch('http://localhost:3000/blogs/' + id)
-            // const data = await res.json()
-            
-            // this.tags = data.tags
-            // console.log(this.tags)
-            // if(res.error) {
-            //     console.log((res.error));
-            // }
             this.isLoading = false
 
         },
